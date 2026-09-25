@@ -1,0 +1,10 @@
+{
+  "description": "Create a romantic, interactive website to celebrate your love story, featuring personalized memories, photos, and heartfelt messages for a special surprise.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
