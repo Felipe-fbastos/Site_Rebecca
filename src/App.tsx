@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 
 const RELATIONSHIP_START = new Date('2022-08-10T03:00:00Z').getTime();
 const numberFormatter = new Intl.NumberFormat('pt-BR');
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 
 function getTimeTogether(now = Date.now()) {
   const elapsed = Math.max(0, now - RELATIONSHIP_START);
@@ -175,6 +176,7 @@ function FallingPetals() {
   }));
   return (
     <div
+      className="opening-screen"
       style={{
         position: 'fixed',
         inset: 0,
@@ -310,8 +312,9 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
       </div>
 
       {/* Letter */}
-      <div style={{ width: 'min(460px, 92vw, 78vh)', position: 'relative' }}>
+      <div className="opening-letter-wrap" style={{ width: 'min(460px, 92vw, 78vh)', position: 'relative' }}>
         <div
+          className="opening-letter-card"
           style={{
             aspectRatio: '1 / 1',
             display: 'flex',
@@ -328,7 +331,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
             transform: flapOpen ? 'translateY(-8px) scale(1.025)' : 'translateY(0) scale(1)',
           }}
         >
-          <div style={{ padding: 'clamp(26px, 5vh, 42px) clamp(30px, 8vw, 48px)', textAlign: 'center' }}>
+          <div className="opening-letter-content" style={{ padding: 'clamp(26px, 5vh, 42px) clamp(30px, 8vw, 48px)', textAlign: 'center' }}>
             <div className="opening-sun-crest">
               <SunCrestSVG size={58} />
             </div>
@@ -405,7 +408,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
         </div>
       </div>
 
-      <p style={{
+      <p className="opening-footer" style={{
         marginTop: 22,
         fontFamily: 'Manrope, sans-serif',
         color: '#F6D98B',
@@ -430,7 +433,7 @@ function HeroSection() {
     { label: 'segundos', value: time.seconds },
   ];
   return (
-    <section style={{
+    <section className="hero-section" style={{
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -661,7 +664,7 @@ const timelineEvents = [
     title: 'A foto que mudou a nossa história',
     text: 'Naquele sarau da escola, apareci em uma foto sua. Você postou, eu respondi e, em uma conversa que parecia comum, nasceu algo que nunca mais deixou de fazer parte dos nossos dias.',
     icon: '02',
-    image: '/images/sarau.jpeg',
+    image: assetUrl('/images/sarau.jpeg'),
     imageAlt: 'A foto no sarau da escola que deu início à nossa história',
     imageCaption: 'A foto que deu início à nossa história',
   },
@@ -677,7 +680,7 @@ const timelineEvents = [
     title: 'Nosso primeiro encontro',
     text: 'Foi o começo de tantos momentos que ainda viriam. Um dia especial, guardado com carinho, em que estar ao seu lado começou a se tornar o meu lugar preferido.',
     icon: '04',
-    image: '/images/primeiro-encontro.jpeg',
+    image: assetUrl('/images/primeiro-encontro.jpeg'),
     imageAlt: 'Foto do nosso primeiro encontro em uma moldura de coração',
     imageCaption: 'Nosso primeiro encontro — 16/04/2022',
   },
@@ -686,7 +689,7 @@ const timelineEvents = [
     title: 'O dia em que escolhemos ser nós',
     text: 'Começamos a namorar e demos nome ao sentimento que já crescia entre nós. Desde esse dia, seguimos escrevendo uma história feita de amor, cuidado e sonhos compartilhados.',
     icon: '05',
-    image: '/images/nosso-aniversario.jpg',
+    image: assetUrl('/images/nosso-aniversario.jpg'),
     imageAlt: 'Nossas mãos com alianças no aniversário de namoro',
     imageCaption: 'Nosso aniversário de namoro',
   },
@@ -695,7 +698,7 @@ const timelineEvents = [
     title: 'Ainda estamos só no começo',
     text: 'Desde o dia em que escolhemos ser nós, seguimos colecionando fins de semana, passeios, risadas e apoio nos dias difíceis. Quando olho para tudo o que vivemos, tenho ainda mais certeza de que escolheria você novamente, em cada capítulo da nossa história.',
     icon: '06',
-    image: '/images/ainda-no-comeco.jpeg',
+    image: assetUrl('/images/ainda-no-comeco.jpeg'),
     imageAlt: 'Nós dois juntos diante de um espelho',
     imageCaption: 'E ainda temos uma vida inteira pela frente',
   },
@@ -839,7 +842,7 @@ const gallery: GalleryItem[] = [
     title: 'Fins de semana',
     caption: 'Eu amo ter esse tempo com você.',
     mark: '01',
-    image: '/images/fins-de-semana.jpg',
+    image: assetUrl('/images/fins-de-semana.jpg'),
     imageAlt: 'Nós dois usando máscaras faciais em um fim de semana juntos',
     position: 'center 42%',
   },
@@ -847,7 +850,7 @@ const gallery: GalleryItem[] = [
     title: 'Conhecer lugares',
     caption: 'Quero continuar descobrindo lugares ao seu lado.',
     mark: '02',
-    image: '/images/conhecer-lugares.jpg',
+    image: assetUrl('/images/conhecer-lugares.jpg'),
     imageAlt: 'Nós dois abraçados contemplando a cidade à noite',
     position: 'center 52%',
   },
@@ -855,7 +858,7 @@ const gallery: GalleryItem[] = [
     title: 'Passeios na Liberdade',
     caption: 'A Liberdade também guarda um pedacinho da nossa história.',
     mark: '03',
-    image: '/images/liberdade.jpg',
+    image: assetUrl('/images/liberdade.jpg'),
     imageAlt: 'Nossos pratos de ramen em um passeio na Liberdade',
     position: 'center 48%',
   },
@@ -863,7 +866,7 @@ const gallery: GalleryItem[] = [
     title: 'Nossas viagens',
     caption: 'Cada viagem ao seu lado vira uma lembrança que eu quero guardar para sempre. Ainda temos tantos lugares para descobrir juntos.',
     mark: '04',
-    image: '/images/nossas-viagens.jpeg',
+    image: assetUrl('/images/nossas-viagens.jpeg'),
     imageAlt: 'Nós dois juntos durante uma viagem, cercados pela natureza',
     position: 'center 45%',
   },
@@ -1040,25 +1043,25 @@ type FavoritePhoto = {
 
 const favoritePhotos: FavoritePhoto[] = [
   {
-    image: '/images/favorita-01.gif',
+    image: assetUrl('/images/favorita-01.gif'),
     imageAlt: 'Você sorrindo e abraçando um bichinho de pelúcia',
     caption: 'Seu sorriso, seu jeito carinhoso e essa doçura que aparece até nos momentos mais simples — tudo nessa imagem faz meu coração ficar quentinho.',
     position: 'center 45%',
   },
   {
-    image: '/images/favorita-02.jpeg',
+    image: assetUrl('/images/favorita-02.jpeg'),
     imageAlt: 'Uma selfie sua com os cabelos soltos',
     caption: 'Eu amo essa foto porque ela guarda tantos detalhes seus que me encantam: seus olhos, seu cabelo e esse jeitinho lindo de olhar para a câmera.',
     position: '56% center',
   },
   {
-    image: '/images/favorita-03.jpeg',
+    image: assetUrl('/images/favorita-03.jpeg'),
     imageAlt: 'Uma selfie sua usando azul e uma flor no cabelo',
     caption: 'Essa flor combina com você: linda, delicada e capaz de deixar tudo ao redor um pouco mais bonito.',
     position: '63% center',
   },
   {
-    image: '/images/favorita-04.jpeg',
+    image: assetUrl('/images/favorita-04.jpeg'),
     imageAlt: 'Uma selfie sua com os cabelos soltos e roupa preta',
     caption: 'Talvez seja apenas uma foto para você. Para mim, é mais uma prova de que sou completamente apaixonado por cada versão sua.',
     position: 'center 38%',
@@ -1771,11 +1774,14 @@ function MusicButton({ enabled }: { enabled: boolean }) {
     <>
       <audio
         ref={audioRef}
-        src="/audio/so-nos-dois.mp3"
+        src={assetUrl('/audio/so-nos-dois.mp3')}
         aria-label="Só Nós Dois — nossa música"
         loop
         preload="metadata"
         className="music-audio"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onError={() => setPlaying(false)}
       />
 
       <button
