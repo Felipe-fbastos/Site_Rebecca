@@ -1884,3 +1884,243 @@ a {
     overflow-x: hidden;
   }
 }
+
+/* Iemanjá theme: deep ocean, sea foam, pearls and moonlit silver */
+.iemanja-opening {
+  background:
+    radial-gradient(circle at 50% 14%, rgba(222, 246, 255, 0.24), transparent 24%),
+    radial-gradient(circle at 18% 78%, rgba(80, 194, 220, 0.2), transparent 26%),
+    linear-gradient(165deg, #073b5d 0%, #075d80 48%, #03263f 100%) !important;
+}
+
+.iemanja-opening::before,
+.iemanja-opening::after {
+  content: '';
+  position: absolute;
+  left: -8%;
+  width: 116%;
+  height: 90px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(196, 237, 246, 0.09);
+  animation: oceanBreath 7s ease-in-out infinite alternate;
+}
+
+.iemanja-opening::before { bottom: -58px; }
+.iemanja-opening::after {
+  bottom: -30px;
+  opacity: 0.55;
+  animation-delay: -3.5s;
+}
+
+.iemanja-opening .opening-letter-card {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255,255,255,0.2), transparent 28%),
+    linear-gradient(150deg, #1685a8 0%, #08688c 52%, #064766 100%) !important;
+  border-color: rgba(229, 249, 255, 0.82) !important;
+  box-shadow: 0 28px 80px rgba(0, 25, 45, 0.58), inset 0 0 0 7px rgba(255,255,255,0.035), inset 0 0 0 9px rgba(189, 232, 243, 0.28) !important;
+}
+
+.iemanja-opening .opening-sun-crest,
+.iemanja-opening .opening-letter-content > p:first-of-type,
+.iemanja-opening .opening-footer {
+  color: #dff7ff !important;
+}
+
+.iemanja-opening .opening-letter-content button {
+  background: linear-gradient(135deg, #ffffff, #c7eaf3) !important;
+  border-color: rgba(255,255,255,0.9) !important;
+  color: #075574 !important;
+  box-shadow: 0 12px 30px rgba(0, 35, 55, 0.36) !important;
+}
+
+.iemanja-opening .opening-lantern-field span {
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #ffffff, #bce9f4 36%, #4bb4cf 72%, transparent 74%);
+  box-shadow: 0 0 14px rgba(204, 244, 255, 0.72);
+  opacity: 0.58;
+}
+
+.iemanja-opening .opening-lantern-field span::before,
+.iemanja-opening .opening-lantern-field span::after {
+  display: none;
+}
+
+.iemanja-theme {
+  --iemanja-deep: #03263f;
+  --iemanja-blue: #075d80;
+  --iemanja-water: #1685a8;
+  --iemanja-sky: #72c7dc;
+  --iemanja-foam: #e8f8fb;
+  --iemanja-pearl: #ffffff;
+  --iemanja-silver: #c5dce4;
+}
+
+.iemanja-theme > section {
+  position: relative;
+}
+
+.iemanja-theme > section:nth-of-type(1),
+.iemanja-theme > section:nth-of-type(2),
+.iemanja-theme > section:nth-of-type(5),
+.iemanja-theme > section:nth-of-type(7),
+.iemanja-theme > section:nth-of-type(8),
+.iemanja-theme > section:nth-of-type(10) {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(222, 247, 255, 0.22) 0 3px, transparent 4px),
+    radial-gradient(circle at 91% 33%, rgba(126, 210, 229, 0.18) 0 4px, transparent 5px),
+    radial-gradient(circle at 18% 82%, rgba(95, 191, 215, 0.15), transparent 25%),
+    linear-gradient(158deg, #075d80 0%, #064665 52%, #03263f 100%) !important;
+}
+
+.iemanja-theme > section:nth-of-type(3),
+.iemanja-theme > section:nth-of-type(4),
+.iemanja-theme > section:nth-of-type(6),
+.iemanja-theme > section:nth-of-type(9) {
+  background:
+    radial-gradient(circle at 90% 13%, rgba(84, 181, 207, 0.18), transparent 25%),
+    radial-gradient(circle at 7% 85%, rgba(255,255,255,0.8), transparent 24%),
+    linear-gradient(150deg, #ffffff 0%, #e8f8fb 54%, #cbeaf2 100%) !important;
+}
+
+.iemanja-theme > section:not(:first-child)::before {
+  content: '≋';
+  color: #cceef6;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 20px rgba(205, 240, 248, 0.5);
+}
+
+.iemanja-theme > section:nth-of-type(3)::before,
+.iemanja-theme > section:nth-of-type(4)::before,
+.iemanja-theme > section:nth-of-type(6)::before,
+.iemanja-theme > section:nth-of-type(9)::before {
+  color: #1685a8;
+}
+
+.iemanja-theme > section::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: -5%;
+  right: -5%;
+  bottom: -42px;
+  height: 74px;
+  border-radius: 50%;
+  background: rgba(225, 247, 252, 0.1);
+  pointer-events: none;
+  animation: oceanBreath 9s ease-in-out infinite alternate;
+}
+
+.iemanja-theme .text-lilac,
+.iemanja-theme .opening-sun-crest,
+.iemanja-theme .photo-placeholder__mark,
+.iemanja-theme .love-word-message > span,
+.iemanja-theme .tibitar-intro > span,
+.iemanja-theme .tibitar-question > span,
+.iemanja-theme .tibitar-hint > span,
+.iemanja-theme .personal-heading > span,
+.iemanja-theme .personal-date-card__heading > span,
+.iemanja-theme .favorite-photos-heading > span {
+  color: #1685a8 !important;
+}
+
+.iemanja-theme .timeline-entry > div:first-child {
+  border-color: rgba(207, 242, 250, 0.78) !important;
+  box-shadow: 0 0 24px rgba(104, 203, 225, 0.28) !important;
+}
+
+.iemanja-theme .timeline-photo,
+.iemanja-theme .timeline-keepsake,
+.iemanja-theme .tibitar-card,
+.iemanja-theme .personal-date-card,
+.iemanja-theme .personal-reveal {
+  border-color: rgba(199, 235, 244, 0.3);
+}
+
+.iemanja-theme .photo-placeholder {
+  background: radial-gradient(circle at 22% 18%, rgba(255,255,255,0.25), transparent 34%), linear-gradient(145deg, #1685a8, #075d80 55%, #03263f);
+}
+
+.iemanja-theme .love-word-options button.is-selected,
+.iemanja-theme .tibitar-form button,
+.iemanja-theme .tibitar-success button,
+.iemanja-theme .personal-plan-button {
+  background: linear-gradient(135deg, #dff7ff, #8fd4e5);
+  color: #064766;
+  box-shadow: 0 12px 30px rgba(0, 62, 88, 0.2);
+}
+
+.iemanja-theme .personal-touch.is-selected {
+  border-color: rgba(200, 239, 248, 0.52);
+  background: linear-gradient(115deg, rgba(84, 181, 207, 0.28), rgba(255,255,255,0.08));
+}
+
+.iemanja-theme .favorite-photo-card,
+.iemanja-theme .future-card,
+.iemanja-theme .paper-texture {
+  border-color: rgba(17, 118, 151, 0.2) !important;
+  background: rgba(252, 255, 255, 0.88) !important;
+  box-shadow: 0 20px 55px rgba(2, 62, 87, 0.14), 0 0 0 1px rgba(207, 239, 247, 0.36) !important;
+}
+
+.iemanja-theme .future-heading span,
+.iemanja-theme .future-heading h2,
+.iemanja-theme .future-heading p,
+.iemanja-theme .future-card p,
+.iemanja-theme .favorite-photos-heading h2,
+.iemanja-theme .favorite-photos-heading p,
+.iemanja-theme .favorite-photos-note,
+.iemanja-theme .favorite-photo-card__caption,
+.iemanja-theme .favorite-photo-card__caption small,
+.iemanja-theme .favorite-photo-card__caption strong,
+.iemanja-theme .love-words-heading h2,
+.iemanja-theme .love-words-heading p,
+.iemanja-theme .love-word-message h3,
+.iemanja-theme .love-word-message p {
+  color: #064766 !important;
+}
+
+.iemanja-theme .lily-background__flower {
+  color: #dff7ff;
+  opacity: 0.19;
+  filter: drop-shadow(0 0 9px rgba(191, 233, 243, 0.18));
+}
+
+.iemanja-theme > section:nth-of-type(3) .lily-background__flower,
+.iemanja-theme > section:nth-of-type(4) .lily-background__flower,
+.iemanja-theme > section:nth-of-type(6) .lily-background__flower,
+.iemanja-theme > section:nth-of-type(9) .lily-background__flower {
+  color: #1685a8;
+  opacity: 0.13;
+}
+
+.iemanja-theme + footer,
+.iemanja-theme footer {
+  background: #03263f !important;
+}
+
+.iemanja-theme .personal-plan,
+.iemanja-theme .tibitar-form input {
+  background: rgba(1, 35, 53, 0.3);
+}
+
+.iemanja-theme ~ .music-button,
+.music-button {
+  border-color: rgba(202, 239, 248, 0.54);
+  background: linear-gradient(135deg, #1685a8, #064766);
+  box-shadow: 0 13px 34px rgba(0, 37, 57, 0.42), 0 0 20px rgba(158, 222, 237, 0.16);
+}
+
+@keyframes oceanBreath {
+  from { transform: translate3d(-1.5%, 0, 0) scaleY(0.92); }
+  to { transform: translate3d(1.5%, -9px, 0) scaleY(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iemanja-opening::before,
+  .iemanja-opening::after,
+  .iemanja-theme > section::after {
+    animation: none;
+  }
+}

@@ -137,19 +137,11 @@ function LilySVG({
 function SunCrestSVG({ size = 58 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 80 80" fill="none" aria-hidden="true">
-      <g transform="translate(40 40)" fill="currentColor">
-        {Array.from({ length: 16 }, (_, index) => (
-          <path
-            key={index}
-            d="M0 -22 C-2 -28 -1 -34 0 -38 C2 -33 2 -27 0 -22Z"
-            opacity={index % 2 === 0 ? 0.95 : 0.68}
-            transform={`rotate(${index * 22.5})`}
-          />
-        ))}
-        <circle r="16" />
-        <circle r="10.5" fill="#6A378B" opacity="0.24" />
-        <circle r="7" />
-      </g>
+      <circle cx="40" cy="29" r="8" fill="currentColor" opacity="0.92" />
+      <circle cx="40" cy="29" r="3.2" fill="#F7FCFF" opacity="0.95" />
+      <path d="M8 43C17 35 25 35 34 43C43 51 51 51 72 38" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+      <path d="M10 54C20 46 28 46 38 54C47 61 56 61 70 51" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.72" />
+      <path d="M18 64C26 59 34 59 42 64C50 69 57 69 64 65" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.45" />
     </svg>
   );
 }
@@ -176,7 +168,6 @@ function FallingPetals() {
   }));
   return (
     <div
-      className="opening-screen"
       style={{
         position: 'fixed',
         inset: 0,
@@ -255,6 +246,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
 
   return (
     <div
+      className="opening-screen iemanja-opening"
       style={{
         position: 'fixed',
         inset: 0,
@@ -1915,7 +1907,7 @@ function LilyBackground({ section }: { section: HTMLElement }) {
 function SectionLilyBackgrounds() {
   const [sections, setSections] = useState<HTMLElement[]>([]);
   useEffect(() => {
-    setSections(Array.from(document.querySelectorAll<HTMLElement>('.rapunzel-theme > section')));
+    setSections(Array.from(document.querySelectorAll<HTMLElement>('.iemanja-theme > section')));
   }, []);
   return <>{sections.map((section, index) => createPortal(<LilyBackground section={section} />, section, String(index)))}</>;
 }
@@ -1929,7 +1921,7 @@ export default function App() {
       <MusicButton enabled={opened} />
       <BackToTop enabled={opened} />
 
-      <div className="site-content rapunzel-theme" style={{
+      <div className="site-content rapunzel-theme iemanja-theme" style={{
         opacity: opened ? 1 : 0,
         transition: 'opacity 1s ease',
         pointerEvents: opened ? 'auto' : 'none',
