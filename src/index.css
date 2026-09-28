@@ -2326,6 +2326,38 @@ body .iemanja-theme > section:nth-of-type(3) .gallery-card-overlay span {
   background: radial-gradient(circle, rgba(114, 199, 220, 0.22), transparent 68%) !important;
 }
 
+body .iemanja-theme > section:nth-of-type(3) .gallery-modal {
+  background: rgba(1, 28, 43, 0.97) !important;
+}
+
+body .iemanja-theme > section:nth-of-type(3) .gallery-modal > div > div {
+  box-shadow: 0 30px 80px rgba(0, 18, 31, 0.78) !important;
+}
+
+body .iemanja-theme > section:nth-of-type(3) .gallery-modal h3 {
+  color: #ffffff !important;
+}
+
+body .iemanja-theme > section:nth-of-type(3) .gallery-modal p {
+  color: #b3e6f1 !important;
+}
+
+body .iemanja-theme > section:nth-of-type(3) .gallery-modal button {
+  color: #e8f8fb !important;
+  border-color: rgba(179, 230, 241, 0.48) !important;
+  background: rgba(22, 133, 168, 0.12) !important;
+}
+
+.iemanja-theme .favorite-photo-modal__image img {
+  background: #03263f !important;
+  border-color: #e8f8fb !important;
+  box-shadow: 0 32px 80px rgba(0, 18, 31, 0.7) !important;
+}
+
+.iemanja-theme .favorite-photo-modal__content > p {
+  color: #ffffff !important;
+}
+
 .iemanja-theme .timeline-entry > div:first-child,
 .iemanja-theme .timeline-entry [style*="background:"],
 .iemanja-theme .notes-grid button,
