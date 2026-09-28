@@ -411,17 +411,17 @@ function HeroSection() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      <div className="hero-horizon" style={{
+      <div className="hero-ambient hero-ambient--top" style={{
         position: 'absolute', width: 380, height: 380, borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(136,84,208,0.16) 0%, transparent 70%)',
         top: '8%', right: '-12%', pointerEvents: 'none',
       }}/>
-      <div style={{
+      <div className="hero-ambient hero-ambient--bottom" style={{
         position: 'absolute', width: 240, height: 240, borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(198,165,238,0.09) 0%, transparent 70%)',
         bottom: '18%', left: '-6%', pointerEvents: 'none',
       }}/>
-      <div style={{
+      <div className="hero-horizon" style={{
         position: 'absolute',
         left: 0,
         right: 0,
@@ -695,7 +695,7 @@ function TimelineSection() {
             }}>
               Nossa História
             </h2>
-            <div style={{ width: 56, height: 1, margin: '0 auto', background: 'linear-gradient(90deg, transparent, #C6A5EE, transparent)' }} />
+            <div className="section-divider" style={{ width: 56, height: 1, margin: '0 auto', background: 'linear-gradient(90deg, transparent, #C6A5EE, transparent)' }} />
           </div>
         </FadeIn>
 
@@ -880,7 +880,7 @@ function GallerySection() {
             }}>
               Nossas Lembranças
             </h2>
-            <div style={{ width: 56, height: 1, margin: '0 auto', background: 'linear-gradient(90deg, transparent, #8854D0, transparent)' }} />
+            <div className="section-divider" style={{ width: 56, height: 1, margin: '0 auto', background: 'linear-gradient(90deg, transparent, #8854D0, transparent)' }} />
           </div>
         </FadeIn>
 
@@ -1635,7 +1635,7 @@ function LetterSection() {
             }}>
               Carta para você
             </h2>
-            <div style={{ width: 56, height: 1, margin: '0 auto', background: 'linear-gradient(90deg, transparent, #C6A5EE, transparent)' }} />
+            <div className="section-divider" style={{ width: 56, height: 1, margin: '0 auto', background: 'linear-gradient(90deg, transparent, #C6A5EE, transparent)' }} />
           </div>
         </FadeIn>
 

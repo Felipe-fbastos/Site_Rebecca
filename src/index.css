@@ -2314,6 +2314,18 @@ body .iemanja-theme > section:nth-of-type(3) .gallery-card-overlay span {
   color: #b3e6f1 !important;
 }
 
+.iemanja-theme .section-divider {
+  background: linear-gradient(90deg, transparent, #72c7dc, transparent) !important;
+}
+
+.iemanja-theme .timeline-photo--real {
+  box-shadow: 0 16px 38px rgba(0, 31, 48, 0.3) !important;
+}
+
+.iemanja-theme .personal-reveal::before {
+  background: radial-gradient(circle, rgba(114, 199, 220, 0.22), transparent 68%) !important;
+}
+
 .iemanja-theme .timeline-entry > div:first-child,
 .iemanja-theme .timeline-entry [style*="background:"],
 .iemanja-theme .notes-grid button,
