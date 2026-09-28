@@ -2284,6 +2284,36 @@ body .iemanja-theme .personal-plan > span {
   border-color: #b3e6f1 !important;
 }
 
+.iemanja-theme .timeline-line {
+  background: linear-gradient(to bottom, transparent, #72c7dc 6%, rgba(179, 230, 241, 0.45) 90%, transparent) !important;
+}
+
+.iemanja-theme .hero-section::after {
+  background: rgba(114, 199, 220, 0.16) !important;
+  filter: none !important;
+}
+
+.iemanja-theme .gallery-card-overlay {
+  background: linear-gradient(to top, rgba(1, 28, 43, 0.94) 0%, rgba(3, 71, 99, 0.5) 42%, transparent 72%) !important;
+}
+
+.iemanja-theme .gallery-card-overlay p {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 22, 36, 0.72);
+}
+
+.iemanja-theme .gallery-card-overlay span {
+  color: #b3e6f1 !important;
+}
+
+body .iemanja-theme > section:nth-of-type(3) .gallery-card-overlay p {
+  color: #ffffff !important;
+}
+
+body .iemanja-theme > section:nth-of-type(3) .gallery-card-overlay span {
+  color: #b3e6f1 !important;
+}
+
 .iemanja-theme .timeline-entry > div:first-child,
 .iemanja-theme .timeline-entry [style*="background:"],
 .iemanja-theme .notes-grid button,

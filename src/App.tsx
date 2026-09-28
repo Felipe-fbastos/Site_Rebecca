@@ -700,7 +700,7 @@ function TimelineSection() {
         </FadeIn>
 
         <div style={{ position: 'relative' }}>
-          <div style={{
+          <div className="timeline-line" style={{
             position: 'absolute',
             left: 22, top: 0, bottom: 0,
             width: 1,
@@ -910,7 +910,7 @@ function GallerySection() {
                   decoding="async"
                   style={{ objectPosition: item.position, objectFit: item.fit ?? 'cover' }}
                 />
-                <div style={{
+                <div className="gallery-card-overlay" style={{
                   position: 'absolute', inset: 0,
                   background: 'linear-gradient(to top, rgba(33,11,54,0.88) 0%, transparent 58%)',
                   display: 'flex',
