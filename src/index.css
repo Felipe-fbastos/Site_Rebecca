@@ -95,7 +95,7 @@ a {
   justify-self: start;
   margin: 0;
   padding: 8px;
-  background: rgba(22, 7, 32, 0.55);
+  background: linear-gradient(145deg, rgba(1, 42, 61, 0.94), rgba(7, 93, 128, 0.72));
 }
 
 .timeline-photo--real img {
@@ -107,6 +107,7 @@ a {
   margin-inline: auto;
   border-radius: 11px;
   object-fit: contain;
+  object-position: center;
 }
 
 .timeline-photo--real figcaption {
@@ -181,6 +182,10 @@ a {
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
 }
 
+.gallery-grid button {
+  background: linear-gradient(145deg, #043d59, #087da3) !important;
+}
+
 .gallery-grid button:hover .gallery-card-image,
 .gallery-grid button:focus-visible .gallery-card-image {
   transform: scale(1.045);
@@ -192,7 +197,21 @@ a {
   max-height: min(64vh, 620px);
   display: block;
   object-fit: contain;
-  background: #160720;
+  background: #011c2b;
+}
+
+.gallery-modal {
+  background: rgba(1, 28, 43, 0.97) !important;
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.gallery-modal [style*="color:"] {
+  color: #e8f8fb !important;
+}
+
+.gallery-modal button {
+  color: #e8f8fb !important;
+  border-color: rgba(179, 230, 241, 0.48) !important;
 }
 
 @media (max-width: 520px) {
@@ -289,7 +308,7 @@ a {
   aspect-ratio: 4 / 5;
   display: block;
   overflow: hidden;
-  background: #43205d;
+  background: #075d80;
 }
 
 .favorite-photo-card__image img {

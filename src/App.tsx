@@ -802,7 +802,16 @@ function TimelineSection() {
 
 // ─── Gallery Section ──────────────────────────────────────────────────────────
 
-type GalleryItem = { title: string; caption: string; mark: string; image: string; imageAlt: string; position?: string };
+type GalleryItem = {
+  title: string;
+  caption: string;
+  mark: string;
+  image: string;
+  imageAlt: string;
+  position?: string;
+  fit?: 'cover' | 'contain';
+  aspect?: string;
+};
 
 const gallery: GalleryItem[] = [
   {
@@ -827,7 +836,9 @@ const gallery: GalleryItem[] = [
     mark: '03',
     image: assetUrl('/images/liberdade.jpg'),
     imageAlt: 'Nossos pratos de ramen em um passeio na Liberdade',
-    position: 'center 48%',
+    position: 'center',
+    fit: 'contain',
+    aspect: '3 / 4',
   },
   {
     title: 'Nossas viagens',
@@ -880,7 +891,7 @@ function GallerySection() {
                 onClick={() => setActive(item)}
                 style={{
                   width: '100%',
-                  aspectRatio: '1',
+                  aspectRatio: item.aspect ?? '1',
                   borderRadius: 18,
                   overflow: 'hidden',
                   position: 'relative',
@@ -895,7 +906,9 @@ function GallerySection() {
                   className="gallery-card-image"
                   src={item.image}
                   alt={item.imageAlt}
-                  style={{ objectPosition: item.position }}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ objectPosition: item.position, objectFit: item.fit ?? 'cover' }}
                 />
                 <div style={{
                   position: 'absolute', inset: 0,
@@ -937,6 +950,7 @@ function GallerySection() {
 
       {active && (
         <div
+          className="gallery-modal"
           onClick={() => setActive(null)}
           style={{
             position: 'fixed', inset: 0, zIndex: 250,
@@ -1006,6 +1020,8 @@ type FavoritePhoto = {
   imageAlt: string;
   caption: string;
   position?: string;
+  fit?: 'cover' | 'contain';
+  aspect?: string;
 };
 
 const favoritePhotos: FavoritePhoto[] = [
@@ -1014,24 +1030,28 @@ const favoritePhotos: FavoritePhoto[] = [
     imageAlt: 'Você sorrindo e abraçando um bichinho de pelúcia',
     caption: 'Seu sorriso, seu jeito carinhoso e essa doçura que aparece até nos momentos mais simples — tudo nessa imagem faz meu coração ficar quentinho.',
     position: 'center 45%',
+    aspect: '3 / 4',
   },
   {
     image: assetUrl('/images/favorita-02.jpeg'),
     imageAlt: 'Uma selfie sua com os cabelos soltos',
     caption: 'Eu amo essa foto porque ela guarda tantos detalhes seus que me encantam: seus olhos, seu cabelo e esse jeitinho lindo de olhar para a câmera.',
     position: '56% center',
+    aspect: '16 / 10',
   },
   {
     image: assetUrl('/images/favorita-03.jpeg'),
     imageAlt: 'Uma selfie sua usando azul e uma flor no cabelo',
     caption: 'Essa flor combina com você: linda, delicada e capaz de deixar tudo ao redor um pouco mais bonito.',
     position: '63% center',
+    aspect: '16 / 10',
   },
   {
     image: assetUrl('/images/favorita-04.jpeg'),
     imageAlt: 'Uma selfie sua com os cabelos soltos e roupa preta',
     caption: 'Talvez seja apenas uma foto para você. Para mim, é mais uma prova de que sou completamente apaixonado por cada versão sua.',
     position: 'center 38%',
+    aspect: '1 / 1',
   },
 ];
 
@@ -1060,9 +1080,15 @@ function FavoritePhotosSection() {
                 onClick={() => setActivePhoto(index)}
                 aria-label={`Abrir foto preferida ${index + 1}`}
               >
-                <span className="favorite-photo-card__image">
+                <span className="favorite-photo-card__image" style={{ aspectRatio: photo.aspect ?? '4 / 5' }}>
                   {photo.image ? (
-                    <img src={photo.image} alt={photo.imageAlt} style={{ objectPosition: photo.position }} />
+                    <img
+                      src={photo.image}
+                      alt={photo.imageAlt}
+                      loading="lazy"
+                      decoding="async"
+                      style={{ objectPosition: photo.position, objectFit: photo.fit ?? 'cover' }}
+                    />
                   ) : (
                     <PhotoPlaceholder label={`Sua foto preferida ${String(index + 1).padStart(2, '0')}`} />
                   )}
