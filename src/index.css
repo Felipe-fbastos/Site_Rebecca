@@ -2192,6 +2192,47 @@ body {
   box-shadow: 0 12px 36px rgba(0, 49, 72, 0.38) !important;
 }
 
+/* A abertura usa apenas a paleta oceânica, inclusive nos elementos que antes
+   recebiam violeta por estilos locais. */
+.iemanja-theme .hero-section .hero-ambient--top {
+  background: radial-gradient(circle, rgba(114, 199, 220, 0.24) 0%, transparent 70%) !important;
+  filter: none !important;
+}
+
+.iemanja-theme .hero-section .hero-ambient--bottom {
+  background: radial-gradient(circle, rgba(223, 247, 255, 0.14) 0%, transparent 70%) !important;
+  filter: none !important;
+}
+
+.iemanja-theme .hero-section .hero-horizon {
+  background: linear-gradient(to bottom, transparent 0%, rgba(3, 71, 99, 0.62) 58%, #03263f 100%) !important;
+  filter: none !important;
+}
+
+.iemanja-theme .hero-counter {
+  background: rgba(223, 247, 255, 0.07) !important;
+  border-color: rgba(179, 230, 241, 0.2) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.iemanja-theme .hero-time-unit {
+  background: rgba(223, 247, 255, 0.065) !important;
+  border-color: rgba(179, 230, 241, 0.18) !important;
+}
+
+.iemanja-theme .hero-photo-main {
+  box-shadow: 0 20px 60px rgba(0, 29, 47, 0.62) !important;
+}
+
+.iemanja-theme .hero-photo-main > div:last-child {
+  background: linear-gradient(to bottom, transparent 40%, rgba(1, 36, 55, 0.62) 100%) !important;
+}
+
+.iemanja-theme .hero-photo-memory {
+  border-color: rgba(179, 230, 241, 0.48) !important;
+  box-shadow: 0 10px 28px rgba(0, 29, 47, 0.55) !important;
+}
+
 .iemanja-theme .timeline-entry > div:first-child,
 .iemanja-theme .timeline-entry [style*="background:"],
 .iemanja-theme .notes-grid button,

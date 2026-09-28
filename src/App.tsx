@@ -250,14 +250,14 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
       </div>
 
       {/* Ambient glows */}
-      <div style={{
+      <div className="hero-ambient hero-ambient--top" style={{
         position: 'absolute', width: 420, height: 420, borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(255,214,125,0.2) 0%, rgba(197,131,214,0.1) 38%, transparent 70%)',
         top: '5%', left: '50%', transform: 'translateX(-50%)',
         animation: 'gentleGlow 4s ease-in-out infinite',
         pointerEvents: 'none',
       }}/>
-      <div style={{
+      <div className="hero-ambient hero-ambient--bottom" style={{
         position: 'absolute', width: 260, height: 260, borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(255,196,111,0.16) 0%, transparent 70%)',
         bottom: '10%', right: '5%',
@@ -411,7 +411,7 @@ function HeroSection() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      <div style={{
+      <div className="hero-horizon" style={{
         position: 'absolute', width: 380, height: 380, borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(136,84,208,0.16) 0%, transparent 70%)',
         top: '8%', right: '-12%', pointerEvents: 'none',
@@ -462,7 +462,7 @@ function HeroSection() {
         </FadeIn>
 
         <FadeIn delay={0.4}>
-          <div style={{
+          <div className="hero-counter" style={{
             marginBottom: 28,
             padding: '22px 20px',
             borderRadius: 20,
@@ -503,7 +503,7 @@ function HeroSection() {
               }}
             >
               {extraTime.map(unit => (
-                <div key={unit.label} style={{
+                <div className="hero-time-unit" key={unit.label} style={{
                   padding: '12px 8px',
                   borderRadius: 14,
                   background: 'rgba(255,249,245,0.055)',
@@ -544,7 +544,7 @@ function HeroSection() {
         {/* Photos — substituíveis com fotos reais do casal */}
         <FadeIn delay={0.6}>
           <div style={{ position: 'relative', height: 210, marginBottom: 28 }}>
-            <div style={{
+            <div className="hero-photo-main" style={{
               position: 'absolute',
               left: 20, right: 20, top: 0,
               height: 192,
@@ -555,7 +555,7 @@ function HeroSection() {
               <PhotoPlaceholder label="Foto principal de vocês" />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(33,11,54,0.48) 100%)' }} />
             </div>
-            <div style={{
+            <div className="hero-photo-memory hero-photo-memory--left" style={{
               position: 'absolute', left: 0, bottom: -4,
               width: 88, height: 88,
               borderRadius: 14, overflow: 'hidden',
@@ -564,7 +564,7 @@ function HeroSection() {
             }}>
               <PhotoPlaceholder label="Uma memória" compact />
             </div>
-            <div style={{
+            <div className="hero-photo-memory hero-photo-memory--right" style={{
               position: 'absolute', right: 0, bottom: -4,
               width: 78, height: 78,
               borderRadius: 12, overflow: 'hidden',
