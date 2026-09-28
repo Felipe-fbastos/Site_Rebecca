@@ -2124,3 +2124,159 @@ a {
     animation: none;
   }
 }
+
+/* Final ocean palette: no pink, purple, gold or Rapunzel accents remain visible. */
+body {
+  background-color: #03263f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(82, 181, 207, 0.52);
+}
+
+.iemanja-opening svg {
+  color: #dff7ff !important;
+}
+
+.iemanja-opening > div[style*="radial-gradient"] {
+  filter: hue-rotate(92deg) saturate(0.72) brightness(1.12);
+}
+
+.iemanja-theme > section:nth-of-type(1) [style*="color:"],
+.iemanja-theme > section:nth-of-type(2) [style*="color:"],
+.iemanja-theme > section:nth-of-type(5) [style*="color:"],
+.iemanja-theme > section:nth-of-type(7) [style*="color:"],
+.iemanja-theme > section:nth-of-type(8) [style*="color:"],
+.iemanja-theme > section:nth-of-type(10) [style*="color:"] {
+  color: #e8f8fb !important;
+}
+
+.iemanja-theme > section:nth-of-type(3) [style*="color:"],
+.iemanja-theme > section:nth-of-type(4) [style*="color:"],
+.iemanja-theme > section:nth-of-type(6) [style*="color:"],
+.iemanja-theme > section:nth-of-type(9) [style*="color:"] {
+  color: #064766 !important;
+}
+
+.iemanja-theme .hero-section > div[style*="radial-gradient"],
+.iemanja-theme .personal-orbit {
+  border-color: rgba(190, 235, 245, 0.18) !important;
+  filter: hue-rotate(92deg) saturate(0.72);
+}
+
+.iemanja-theme .hero-section a,
+.iemanja-theme .back-to-top-button,
+.back-to-top-button {
+  border-color: rgba(211, 243, 250, 0.58) !important;
+  background: linear-gradient(135deg, #45b0ca, #075d80) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 36px rgba(0, 49, 72, 0.38) !important;
+}
+
+.iemanja-theme .timeline-entry > div:first-child,
+.iemanja-theme .timeline-entry [style*="background:"],
+.iemanja-theme .notes-grid button,
+.iemanja-theme .love-word-options button {
+  border-color: rgba(158, 220, 234, 0.3) !important;
+}
+
+.iemanja-theme .timeline-entry > div:first-child {
+  background: linear-gradient(135deg, #71c7da, #1685a8) !important;
+  color: #ffffff !important;
+}
+
+.iemanja-theme .timeline-entry > div:nth-child(2) [style*="color:"],
+.iemanja-theme .personal-heading > span,
+.iemanja-theme .personal-date-card__heading > span,
+.iemanja-theme .tibitar-intro > span,
+.iemanja-theme .tibitar-question > span,
+.iemanja-theme .tibitar-hint > span {
+  color: #9edeea !important;
+}
+
+.iemanja-theme .notes-grid button {
+  background: linear-gradient(145deg, rgba(17, 128, 159, 0.2), rgba(1, 45, 67, 0.34)) !important;
+  box-shadow: 0 16px 38px rgba(0, 31, 48, 0.24) !important;
+}
+
+.iemanja-theme .love-word-options button {
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #075d80 !important;
+}
+
+.iemanja-theme .love-word-options button.is-selected {
+  background: linear-gradient(135deg, #1685a8, #064766) !important;
+  color: #ffffff !important;
+}
+
+.iemanja-theme .tibitar-card,
+.iemanja-theme .personal-reveal,
+.iemanja-theme .personal-date-card,
+.iemanja-theme .timeline-keepsake {
+  background: linear-gradient(145deg, rgba(36, 148, 178, 0.16), rgba(1, 39, 59, 0.34)) !important;
+  box-shadow: 0 24px 65px rgba(0, 28, 44, 0.28) !important;
+}
+
+.iemanja-theme .tibitar-hint,
+.iemanja-theme .personal-touch,
+.iemanja-theme .personal-plan {
+  border-color: rgba(174, 226, 238, 0.2) !important;
+  background: rgba(213, 244, 250, 0.07) !important;
+}
+
+.iemanja-theme .personal-touch__mark {
+  background: rgba(179, 230, 241, 0.12) !important;
+  color: #dff7ff !important;
+}
+
+.iemanja-theme .text-plum,
+.iemanja-theme .text-soft-violet,
+.iemanja-theme .love-words-heading > span,
+.iemanja-theme .personal-reveal__signature {
+  color: #1685a8 !important;
+}
+
+.iemanja-theme .favorite-photo-card__image {
+  background: #075d80 !important;
+}
+
+.iemanja-theme .paper-texture,
+.iemanja-theme .love-word-message,
+.iemanja-theme .future-card,
+.iemanja-theme .favorite-photo-card {
+  background: linear-gradient(145deg, #ffffff, #e7f7fa) !important;
+  border-color: rgba(22, 133, 168, 0.22) !important;
+}
+
+.iemanja-theme .paper-texture [style*="color:"],
+.iemanja-theme .paper-texture p,
+.iemanja-theme .paper-texture div {
+  color: #064766 !important;
+}
+
+.iemanja-theme .paper-texture button {
+  background: linear-gradient(135deg, #1685a8, #064766) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0, 73, 101, 0.25) !important;
+}
+
+.iemanja-theme .favorite-photo-modal {
+  background: rgba(1, 28, 43, 0.96) !important;
+}
+
+.iemanja-theme .favorite-photo-modal__content > span,
+.iemanja-theme .favorite-photo-modal__content > button {
+  color: #bce9f4 !important;
+  border-color: rgba(188, 233, 244, 0.38) !important;
+}
+
+.iemanja-theme .lily-background__flower {
+  color: #dff7ff !important;
+  filter: drop-shadow(0 0 10px rgba(181, 231, 242, 0.2));
+}
+
+.iemanja-theme footer,
+.iemanja-theme footer [style*="color:"] {
+  background: #021f34 !important;
+  color: #bce9f4 !important;
+}

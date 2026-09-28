@@ -80,9 +80,9 @@ function useInView(threshold = 0.12) {
   return { ref, visible };
 }
 
-// ─── Lily SVG ─────────────────────────────────────────────────────────────────
+// ─── Seashell SVG ─────────────────────────────────────────────────────────────
 
-function LilySVG({
+function SeashellSVG({
   size = 80,
   className = '',
   style,
@@ -94,42 +94,17 @@ function LilySVG({
   return (
     <svg
       width={size}
-      height={Math.round(size * 1.4)}
-      viewBox="0 0 80 112"
+      height={size}
+      viewBox="0 0 80 80"
       fill="none"
       className={className}
       style={style}
     >
-      <path
-        d="M40 58 C39 76 38 94 41 110"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M39 87 C25 75 13 78 15 88 C20 97 31 97 40 91"
-        fill="currentColor"
-        opacity="0.3"
-      />
-      <path
-        d="M40 77 C52 65 65 67 65 77 C61 86 50 88 40 82"
-        fill="currentColor"
-        opacity="0.24"
-      />
-      <g>
-        <path d="M40 47 C31 35 32 14 40 3 C49 15 49 35 40 47Z" fill="currentColor" opacity="0.92" />
-        <path d="M39 46 C23 44 9 31 7 18 C23 19 38 28 43 43Z" fill="currentColor" opacity="0.68" />
-        <path d="M41 46 C57 43 71 31 73 18 C57 19 42 28 37 43Z" fill="currentColor" opacity="0.78" />
-        <path d="M39 45 C24 48 13 59 15 73 C29 70 40 60 43 47Z" fill="currentColor" opacity="0.82" />
-        <path d="M41 45 C56 48 67 59 65 73 C51 70 40 60 37 47Z" fill="currentColor" opacity="0.62" />
-        <path d="M40 45 C34 54 34 67 40 76 C47 67 47 54 40 45Z" fill="currentColor" opacity="0.9" />
-        <circle cx="40" cy="45" r="3.6" fill="currentColor" />
-        <path d="M40 45 C34 37 30 34 27 30 M40 45 C37 34 36 29 37 24 M40 45 C43 34 45 29 48 25 M40 45 C47 39 52 36 57 35" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.72" />
-        <circle cx="27" cy="30" r="1.7" fill="currentColor" />
-        <circle cx="37" cy="24" r="1.7" fill="currentColor" />
-        <circle cx="48" cy="25" r="1.7" fill="currentColor" />
-        <circle cx="57" cy="35" r="1.7" fill="currentColor" />
-      </g>
+      <path d="M11 59C11 34 23 13 40 13S69 34 69 59C58 66 22 66 11 59Z" fill="currentColor" opacity="0.2" />
+      <path d="M11 59C11 34 23 13 40 13S69 34 69 59" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <path d="M17 58C19 36 28 18 40 14M29 61C30 37 34 21 40 14M51 61C50 37 46 21 40 14M63 58C61 36 52 18 40 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.72" />
+      <path d="M10 59C24 67 56 67 70 59" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+      <circle cx="40" cy="49" r="5" fill="#F7FCFF" opacity="0.92" />
     </svg>
   );
 }
@@ -193,7 +168,7 @@ function FallingPetals() {
             fill="none"
             style={{ transform: `rotate(${p.initRotate}deg)` }}
           >
-            <path d="M12 32 C4 24 0 12 12 0 C24 12 20 24 12 32Z" fill="#F6D98B" opacity="0.78" />
+            <path d="M12 32 C4 24 0 12 12 0 C24 12 20 24 12 32Z" fill="#DFF7FF" opacity="0.78" />
           </svg>
         </div>
       ))}
@@ -291,16 +266,16 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
 
       {/* Corner lilies */}
       <div style={{ position: 'absolute', top: 24, left: 16, opacity: 0.22, pointerEvents: 'none' }}>
-        <LilySVG size={54} style={{ color: '#EFCB72' }} />
+        <SeashellSVG size={54} />
       </div>
       <div style={{ position: 'absolute', top: 36, right: 14, opacity: 0.15, pointerEvents: 'none' }}>
-        <LilySVG size={40} style={{ color: '#D8A6E8' }} />
+        <SeashellSVG size={40} />
       </div>
       <div style={{ position: 'absolute', bottom: 56, left: 20, opacity: 0.17, pointerEvents: 'none' }}>
-        <LilySVG size={46} style={{ color: '#D8A6E8' }} />
+        <SeashellSVG size={46} />
       </div>
       <div style={{ position: 'absolute', bottom: 72, right: 16, opacity: 0.13, pointerEvents: 'none' }}>
-        <LilySVG size={36} style={{ color: '#EFCB72' }} />
+        <SeashellSVG size={36} />
       </div>
 
       {/* Letter */}
@@ -329,7 +304,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
             </div>
             <p style={{
               fontFamily: 'Manrope, sans-serif',
-              color: '#F6D98B',
+              color: '#DFF7FF',
               fontSize: 10,
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
@@ -393,7 +368,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
                 if (phase === 'idle') (e.currentTarget as HTMLButtonElement).style.filter = 'brightness(1)';
               }}
             >
-              {phase === 'idle' ? 'Abrir meu presente 💜' : '💜'}
+              {phase === 'idle' ? 'Abrir meu presente 💙' : '💙'}
             </button>
           </div>
 
@@ -403,12 +378,12 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
       <p className="opening-footer" style={{
         marginTop: 22,
         fontFamily: 'Manrope, sans-serif',
-        color: '#F6D98B',
+        color: '#DFF7FF',
         fontSize: 10.5,
         opacity: 0.38,
         letterSpacing: '0.18em',
       }}>
-        feito com amor 💜
+        feito com amor 💙
       </p>
     </div>
   );
@@ -458,7 +433,7 @@ function HeroSection() {
 
       <div className="hero-shell" style={{ width: '100%', textAlign: 'center', position: 'relative' }}>
         <FadeIn>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 18, opacity: 0.72, color: '#F6D98B' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 18, opacity: 0.72, color: '#DFF7FF' }}>
             <SunCrestSVG size={48} />
           </div>
           <h1 style={{
@@ -516,7 +491,7 @@ function HeroSection() {
               {numberFormatter.format(time.days)}
             </p>
             <p style={{ fontFamily: 'Manrope, sans-serif', color: '#C6A5EE', fontSize: 14, opacity: 0.82, marginTop: 4 }}>
-              dias de amor 💜
+              dias de amor 💙
             </p>
             <div
               aria-label={`${numberFormatter.format(time.weeks)} semanas, ${numberFormatter.format(time.days)} dias, ${numberFormatter.format(time.hours)} horas, ${numberFormatter.format(time.minutes)} minutos e ${numberFormatter.format(time.seconds)} segundos juntos`}
@@ -633,7 +608,7 @@ function HeroSection() {
               (e.currentTarget as HTMLAnchorElement).style.filter = 'brightness(1)';
             }}
           >
-            Vem lembrar comigo 💜
+            Vem lembrar comigo 💙
           </a>
         </FadeIn>
       </div>
@@ -709,7 +684,7 @@ function TimelineSection() {
       <div className="timeline-shell" style={{ margin: '0 auto' }}>
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 14, opacity: 0.72, color: '#F6D98B' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 14, opacity: 0.72, color: '#DFF7FF' }}>
               <SunCrestSVG size={42} />
             </div>
             <h2 style={{
@@ -877,10 +852,10 @@ function GallerySection() {
       }}
     >
       <div style={{ position: 'absolute', top: 20, right: 10, opacity: 0.13, pointerEvents: 'none' }}>
-        <LilySVG size={88} className="text-soft-violet" />
+        <SeashellSVG size={88} className="text-soft-violet" />
       </div>
       <div style={{ position: 'absolute', bottom: 20, left: 10, opacity: 0.09, pointerEvents: 'none' }}>
-        <LilySVG size={66} className="text-plum" />
+        <SeashellSVG size={66} className="text-plum" />
       </div>
 
       <div className="gallery-shell" style={{ margin: '0 auto' }}>
@@ -956,7 +931,7 @@ function GallerySection() {
           opacity: 0.52,
           fontStyle: 'italic',
         }}>
-          toque para ver 💜
+          toque para ver 💙
         </p>
       </div>
 
@@ -1168,7 +1143,7 @@ function NotesSection() {
               Tem tanta coisa em você que eu amo.
             </p>
             <p style={{ fontFamily: 'Manrope, sans-serif', color: '#C6A5EE', fontSize: 11, opacity: 0.42, fontStyle: 'italic' }}>
-              toque nos bilhetes para descobrir 💜
+              toque nos bilhetes para descobrir 💙
             </p>
           </div>
         </FadeIn>
@@ -1219,7 +1194,7 @@ function NotesSection() {
                 </button>
                 {on && i === 0 && (
                   <p style={{ marginTop: 16, paddingInline: 14, fontSize: 12, lineHeight: 1.6, color: '#E8D9F7' }}>
-                    <cite style={{ fontStyle: 'italic', color: '#F6D98B' }}>— Geovanna Jainy</cite>
+                    <cite style={{ fontStyle: 'italic', color: '#BCE9F4' }}>— Geovanna Jainy</cite>
                   </p>
                 )}
               </FadeIn>
@@ -1438,11 +1413,11 @@ const plans = [
 
 const personalTouches = [
   {
-    name: 'Lírios',
-    caption: 'a sua delicadeza',
-    title: 'O Lírio e o Delírio',
-    description: 'Teu dorso é campo de lírios,\nBranco e puro como a manhã,\nDespertando em mim delírios\nDe uma paixão que se avança.\n\nE se a rosa tem o ardor,\nO lírio traz a candura,\nA paz que acalma a dor\nE a luz que o tempo não dura.\n\nOlho em teus olhos de calmaria\nE vejo a flor do meu bem querer;\nEm cada pétala, poesia,\nNo teu abraço, meu viver.',
-    mark: 'lily',
+    name: 'Conchas',
+    caption: 'tesouros que o mar guarda',
+    title: 'Concha e Maré',
+    description: 'O mar desenha caminhos\nE guarda segredos na areia;\nEm cada concha, um carinho,\nEm cada onda, você clareia.\n\nSeu olhar tem a calmaria\nDo azul quando encontra o luar;\nE o amor que cresce todo dia\nÉ maré que escolhe ficar.\n\nSe a vida mudar de corrente,\nEu sigo ao seu lado, meu bem;\nPorque meu porto é a gente,\nE o meu horizonte é você também.',
+    mark: 'shell',
   },
 ];
 
@@ -1470,7 +1445,7 @@ function PersonalSection() {
             <span>um retrato seu pelos meus olhos</span>
             <h2>Um cantinho com a sua cara</h2>
             <p>
-              Uma flor que me lembra você e um poema para guardar esse carinho.
+              Um tesouro do mar que me lembra você e um poema para guardar esse carinho.
             </p>
           </div>
         </FadeIn>
@@ -1487,7 +1462,7 @@ function PersonalSection() {
                   aria-pressed={selectedTouch === index}
                 >
                   <span className="personal-touch__mark" aria-hidden="true">
-                    {item.mark === 'lily' ? <LilySVG size={31} className="text-lilac" /> : item.mark}
+                    {item.mark === 'shell' ? <SeashellSVG size={31} className="text-lilac" /> : item.mark}
                   </span>
                   <span>
                     <strong>{item.name}</strong>
@@ -1500,7 +1475,7 @@ function PersonalSection() {
             <div className="personal-reveal" key={selectedTouch} aria-live="polite">
               <span className="personal-reveal__number">0{selectedTouch + 1}</span>
               {personalTouches[selectedTouch].title && (
-                <h3 style={{ position: 'relative', fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 28, color: '#F6D98B', margin: '20px 0 18px' }}>
+                <h3 style={{ position: 'relative', fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 28, color: '#DFF7FF', margin: '20px 0 18px' }}>
                   {personalTouches[selectedTouch].title}
                 </h3>
               )}
@@ -1514,7 +1489,7 @@ function PersonalSection() {
           <blockquote className="personal-quote">
             <span aria-hidden="true">“</span>
             <p>
-              Se eu pudesse reunir você em uma imagem, ela teria a delicadeza dos lírios, a profundidade do roxo, o conforto de um filme favorito e a doçura que só o seu jeito tem.
+              Se eu pudesse reunir você em uma imagem, ela teria a calma do mar, o brilho das pérolas, o conforto de um filme favorito e a doçura que só o seu jeito tem.
             </p>
           </blockquote>
         </FadeIn>
@@ -1554,10 +1529,10 @@ function FutureSection() {
       overflow: 'hidden',
     }}>
       <div style={{ position: 'absolute', top: -12, right: '6%', opacity: 0.16, pointerEvents: 'none', transform: 'rotate(8deg)' }}>
-        <LilySVG size={116} className="text-plum" />
+        <SeashellSVG size={116} className="text-plum" />
       </div>
       <div style={{ position: 'absolute', bottom: -32, left: '4%', opacity: 0.12, pointerEvents: 'none', transform: 'rotate(-10deg)' }}>
-        <LilySVG size={138} className="text-plum" />
+        <SeashellSVG size={138} className="text-plum" />
       </div>
 
       <div className="future-layout" style={{ margin: '0 auto' }}>
@@ -1650,7 +1625,7 @@ function LetterSection() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 22, opacity: 0.32 }}>
-              <LilySVG size={30} className="text-soft-violet" />
+              <SeashellSVG size={30} className="text-soft-violet" />
             </div>
 
             <p style={{
@@ -1679,7 +1654,7 @@ function LetterSection() {
               Eu te amo, minha princesa.
             </p>
             <p style={{ fontFamily: 'Manrope, sans-serif', color: '#8854D0', fontSize: 13, opacity: 0.72 }}>
-              Do seu amor 💜
+              Do seu amor 💙
             </p>
 
             <div style={{
@@ -1703,7 +1678,7 @@ function LetterSection() {
                   onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.02)')}
                   onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                 >
-                  Só mais uma coisinha... 💜
+                  Só mais uma coisinha... 💙
                 </button>
               ) : (
                 <div style={{
@@ -1717,7 +1692,7 @@ function LetterSection() {
                     fontStyle: 'italic',
                     lineHeight: 1.55,
                   }}>
-                    "Eu te quero para sempre, minha princesa. 💜"
+                    "Eu te quero para sempre, minha princesa. 💙"
                   </p>
                 </div>
               )}
@@ -1818,6 +1793,7 @@ function BackToTop({ enabled }: { enabled: boolean }) {
   return (
     <button
       type="button"
+      className="back-to-top-button"
       onClick={goToTop}
       aria-label="Voltar ao início da página"
       title="Voltar ao início"
@@ -1896,7 +1872,7 @@ function LilyBackground({ section }: { section: HTMLElement }) {
       <div className="lily-background__parallax">
         {[0, 1, 2, 3, 4, 5].map(index => (
           <div className={'lily-background__flower lily-background__flower--' + index} key={index}>
-            <LilySVG size={90 + index % 3 * 28} />
+            <SeashellSVG size={90 + index % 3 * 28} />
           </div>
         ))}
       </div>
@@ -1921,7 +1897,7 @@ export default function App() {
       <MusicButton enabled={opened} />
       <BackToTop enabled={opened} />
 
-      <div className="site-content rapunzel-theme iemanja-theme" style={{
+      <div className="site-content iemanja-theme" style={{
         opacity: opened ? 1 : 0,
         transition: 'opacity 1s ease',
         pointerEvents: opened ? 'auto' : 'none',
@@ -1943,7 +1919,7 @@ export default function App() {
           background: '#210B36',
           textAlign: 'center',
         }}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10, opacity: 0.58, color: '#F6D98B' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10, opacity: 0.58, color: '#DFF7FF' }}>
             <SunCrestSVG size={30} />
           </div>
           <p style={{
@@ -1951,7 +1927,7 @@ export default function App() {
             color: '#C6A5EE', fontSize: 10.5, opacity: 0.32,
             letterSpacing: '0.16em',
           }}>
-            feito com amor 💜
+            feito com amor 💙
           </p>
         </footer>
       </div>
