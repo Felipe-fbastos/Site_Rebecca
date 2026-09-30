@@ -1435,6 +1435,162 @@ a {
   50%       { opacity: 0.28; }
 }
 
+@keyframes impactCurtain {
+  0% { opacity: 0; transform: scale(1.08); filter: blur(8px); }
+  14% { opacity: 1; transform: scale(1); filter: blur(0); }
+  68% { opacity: 1; transform: scale(1); filter: blur(0); }
+  100% { opacity: 0; transform: scale(0.94); filter: blur(5px); visibility: hidden; }
+}
+
+@keyframes impactKicker {
+  0%, 10% { opacity: 0; transform: translateY(16px); letter-spacing: 0.34em; }
+  25%, 72% { opacity: 0.82; transform: translateY(0); letter-spacing: 0.22em; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes impactTitle {
+  0%, 20% { opacity: 0; transform: translateY(24px) scale(0.96); }
+  38%, 74% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-16px) scale(1.03); }
+}
+
+@keyframes impactHeart {
+  0%, 32% { opacity: 0; transform: scale(0.3); }
+  45% { opacity: 1; transform: scale(1.28); }
+  55%, 72% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.8); }
+}
+
+@keyframes impactRing {
+  0% { opacity: 0; transform: scale(0.25); }
+  28% { opacity: 0.62; }
+  100% { opacity: 0; transform: scale(1.8); }
+}
+
+@keyframes cinematicLetterArrival {
+  0%, 68% { opacity: 0; transform: translateY(54px) scale(0.86) rotateX(12deg); filter: blur(10px); }
+  82% { opacity: 1; transform: translateY(-8px) scale(1.025) rotateX(0); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotateX(0); filter: blur(0); }
+}
+
+@keyframes openingRaySpin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes clickBurst {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.15); }
+  28% { opacity: 0.92; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(4.8); }
+}
+
+.opening-cinematic-screen {
+  isolation: isolate;
+}
+
+.opening-impact {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+  pointer-events: none;
+  animation: impactCurtain 3.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.opening-impact p {
+  margin: 0 0 12px;
+  color: #f6d98b;
+  font: 600 clamp(10px, 2.8vw, 13px) 'Manrope', system-ui, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  animation: impactKicker 3.2s ease both;
+}
+
+.opening-impact strong {
+  max-width: 760px;
+  color: #fff9f5;
+  font: italic 500 clamp(38px, 10vw, 86px)/0.98 'Cormorant Garamond', Georgia, serif;
+  text-wrap: balance;
+  text-shadow: 0 0 34px rgba(239, 203, 114, 0.25);
+  animation: impactTitle 3.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.opening-impact > span {
+  display: block;
+  margin-top: 22px;
+  color: #f6d98b;
+  font-size: 25px;
+  text-shadow: 0 0 24px rgba(246, 217, 139, 0.9);
+  animation: impactHeart 3.2s ease both;
+}
+
+.opening-impact__rings {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(72vw, 560px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+}
+
+.opening-impact__rings i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(246, 217, 139, 0.38);
+  border-radius: 50%;
+  animation: impactRing 2.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.opening-impact__rings i:nth-child(2) { animation-delay: 0.22s; }
+.opening-impact__rings i:nth-child(3) { animation-delay: 0.44s; }
+
+.opening-impact-rays {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: min(150vw, 1100px);
+  aspect-ratio: 1;
+  opacity: 0.1;
+  background: repeating-conic-gradient(from 0deg, rgba(246,217,139,0.52) 0deg 1deg, transparent 1deg 16deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 68%);
+  mask-image: radial-gradient(circle, #000 0%, transparent 68%);
+  transform: translate(-50%, -50%);
+  animation: openingRaySpin 34s linear infinite;
+  pointer-events: none;
+}
+
+.cinematic-letter {
+  z-index: 9;
+  transform-origin: center;
+  animation: cinematicLetterArrival 4.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.opening-click-burst {
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(circle, #fff9e8 0%, rgba(246,217,139,0.86) 18%, rgba(168,117,216,0.35) 42%, transparent 70%);
+  pointer-events: none;
+}
+
+.opening-cinematic-screen--opening .opening-click-burst {
+  animation: clickBurst 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.opening-cinematic-screen--opening .opening-letter-card {
+  transform: translateY(-18px) scale(1.08) !important;
+  filter: brightness(1.12);
+}
+
 .opening-lantern-field {
   position: absolute;
   inset: 0;

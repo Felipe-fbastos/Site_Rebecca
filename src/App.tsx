@@ -296,6 +296,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
 
   return (
     <div
+      className={`opening-screen opening-cinematic-screen opening-cinematic-screen--${phase}`}
       style={{
         position: 'fixed',
         inset: 0,
@@ -310,6 +311,15 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
         pointerEvents: phase === 'done' ? 'none' : 'auto',
       }}
     >
+      <div className="opening-impact" aria-hidden="true">
+        <div className="opening-impact__rings"><i /><i /><i /></div>
+        <p>Tudo começou com uma foto.</p>
+        <strong>E virou o meu para sempre.</strong>
+        <span>♥</span>
+      </div>
+      <div className="opening-impact-rays" aria-hidden="true" />
+      <div className="opening-click-burst" aria-hidden="true" />
+
       <div className="opening-lantern-field" aria-hidden="true">
         {[
           { left: '8%', top: '19%', delay: '0s', size: 12 },
@@ -353,7 +363,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
       </div>
 
       {/* Letter */}
-      <div className="opening-letter-wrap" style={{ width: 'min(460px, 92vw, 78vh)', position: 'relative' }}>
+      <div className="opening-letter-wrap cinematic-letter" style={{ width: 'min(460px, 92vw, 78vh)', position: 'relative' }}>
         <div
           className="opening-letter-card"
           style={{
