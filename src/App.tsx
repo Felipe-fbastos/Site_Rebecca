@@ -896,7 +896,7 @@ type GalleryItem = { title: string; caption: string; mark: string; image: string
 const gallery: GalleryItem[] = [
   {
     title: 'Fins de semana',
-    caption: 'Eu amo ter esse tempo com você.',
+    caption: 'Eu amo ter tempo de qualidade com você.',
     mark: '01',
     image: assetUrl('/images/fins-de-semana.jpg'),
     imageAlt: 'Nós dois usando máscaras faciais em um fim de semana juntos',
@@ -1103,7 +1103,7 @@ const favoritePhotos: FavoritePhoto[] = [
   {
     image: assetUrl('/images/favorita-01.gif'),
     imageAlt: 'Você sorrindo e abraçando um bichinho de pelúcia',
-    caption: 'Seu sorriso, seu jeito carinhoso e essa doçura que aparece até nos momentos mais simples — tudo nessa imagem faz meu coração ficar quentinho.',
+    caption: 'Seu sorriso, seu jeito carinhoso e essa doçura que aparece até nos momentos mais simples. Tudo nessa imagem faz meu coração ficar quentinho.',
     position: 'center 45%',
   },
   {
