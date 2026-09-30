@@ -195,6 +195,79 @@ a {
   background: #160720;
 }
 
+.photo-tap-cue {
+  display: none;
+}
+
+@media (max-width: 759px), (hover: none) and (pointer: coarse) {
+  .photo-tap-cue {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 4;
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 10px 7px 8px;
+    border: 1px solid rgba(255, 249, 245, 0.58);
+    border-radius: 999px;
+    background: rgba(33, 11, 54, 0.78);
+    box-shadow: 0 7px 20px rgba(20, 7, 34, 0.32);
+    color: #fff9f5;
+    font-family: Manrope, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    text-transform: uppercase;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(9px);
+    animation: photo-tap-cue-pulse 2.8s ease-in-out 2;
+    pointer-events: none;
+  }
+
+  .photo-tap-cue__icon {
+    display: grid;
+    width: 18px;
+    height: 18px;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f6d98b, #efcb72);
+    color: #4e2868;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  .photo-tap-cue--favorite {
+    top: auto;
+    right: 14px;
+    bottom: 18px;
+  }
+
+  .gallery-photo-card:active,
+  .favorite-photo-card:active {
+    transform: scale(0.985);
+  }
+}
+
+@keyframes photo-tap-cue-pulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 7px 20px rgba(20, 7, 34, 0.32);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.035);
+    box-shadow: 0 9px 25px rgba(20, 7, 34, 0.42), 0 0 0 5px rgba(246, 217, 139, 0.13);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-tap-cue {
+    animation: none;
+  }
+}
+
 .hero-photo-collage {
   height: clamp(310px, 52vw, 390px) !important;
   margin-bottom: 38px !important;

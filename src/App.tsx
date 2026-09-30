@@ -951,6 +951,7 @@ function GallerySection() {
           {gallery.map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <button
+                className="gallery-photo-card"
                 onClick={() => setActive(item)}
                 style={{
                   width: '100%',
@@ -991,6 +992,10 @@ function GallerySection() {
                     {item.title}
                   </p>
                 </div>
+                <span className="photo-tap-cue" aria-hidden="true">
+                  <span className="photo-tap-cue__icon">↗</span>
+                  Toque para abrir
+                </span>
               </button>
             </FadeIn>
           ))}
@@ -1146,6 +1151,10 @@ function FavoritePhotosSection() {
                 <span className="favorite-photo-card__caption">
                   <small>minha favorita</small>
                   <strong>{String(index + 1).padStart(2, '0')}</strong>
+                </span>
+                <span className="photo-tap-cue photo-tap-cue--favorite" aria-hidden="true">
+                  <span className="photo-tap-cue__icon">↗</span>
+                  Toque para abrir
                 </span>
               </button>
             </FadeIn>
