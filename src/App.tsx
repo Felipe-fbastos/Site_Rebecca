@@ -29,37 +29,21 @@ function useTimeTogether() {
   return getTimeTogether(now);
 }
 
-function scrollToSectionSmoothly(sectionId: string, duration = 1_250) {
+function scrollToSectionSmoothly(sectionId: string) {
   const target = document.getElementById(sectionId);
   if (!target) return;
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    target.scrollIntoView();
+  const behavior: ScrollBehavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ? 'auto'
+    : 'smooth';
+
+  target.scrollIntoView({ behavior, block: 'start' });
+
+  try {
     window.history.replaceState(null, '', `#${sectionId}`);
-    return;
+  } catch {
+    // The scroll still works when history updates are restricted by the browser.
   }
-
-  const startY = window.scrollY;
-  const targetY = target.getBoundingClientRect().top + startY;
-  const distance = targetY - startY;
-  const startTime = performance.now();
-
-  function animate(currentTime: number) {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const eased = progress < 0.5
-      ? 4 * progress * progress * progress
-      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-    window.scrollTo(0, startY + distance * eased);
-
-    if (progress < 1) {
-      window.requestAnimationFrame(animate);
-    } else {
-      window.history.replaceState(null, '', `#${sectionId}`);
-    }
-  }
-
-  window.requestAnimationFrame(animate);
 }
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────
