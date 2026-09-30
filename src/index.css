@@ -195,6 +195,36 @@ a {
   background: #160720;
 }
 
+.hero-photo-collage {
+  height: clamp(310px, 52vw, 390px) !important;
+  margin-bottom: 38px !important;
+}
+
+.hero-photo-primary {
+  height: clamp(292px, 49vw, 370px) !important;
+  border: 1px solid rgba(246, 217, 139, 0.2);
+}
+
+.hero-photo-primary__image,
+.hero-photo-memory img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-photo-primary__image {
+  object-position: center 39%;
+}
+
+.hero-photo-memory--left img {
+  object-position: center 32%;
+}
+
+.hero-photo-memory--right img {
+  object-position: center 72%;
+}
+
 .gallery-modal {
   height: 100vh;
   height: 100dvh;

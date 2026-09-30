@@ -628,8 +628,8 @@ function HeroSection() {
 
         {/* Photos — substituíveis com fotos reais do casal */}
         <FadeIn delay={0.6}>
-          <div style={{ position: 'relative', height: 210, marginBottom: 28 }}>
-            <div style={{
+          <div className="hero-photo-collage" style={{ position: 'relative', height: 210, marginBottom: 28 }}>
+            <div className="hero-photo-primary" style={{
               position: 'absolute',
               left: 20, right: 20, top: 0,
               height: 192,
@@ -637,26 +637,30 @@ function HeroSection() {
               overflow: 'hidden',
               boxShadow: '0 20px 60px rgba(33,11,54,0.62)',
             }}>
-              <PhotoPlaceholder label="Foto principal de vocês" />
+              <img
+                className="hero-photo-primary__image"
+                src={assetUrl('/images/foto-principal.jpeg')}
+                alt="Nós dois juntos em um momento de carinho"
+              />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(33,11,54,0.48) 100%)' }} />
             </div>
-            <div style={{
+            <div className="hero-photo-memory hero-photo-memory--left" style={{
               position: 'absolute', left: 0, bottom: -4,
               width: 88, height: 88,
               borderRadius: 14, overflow: 'hidden',
               boxShadow: '0 10px 28px rgba(33,11,54,0.5)',
               border: '2px solid rgba(198,165,238,0.32)',
             }}>
-              <PhotoPlaceholder label="Uma memória" compact />
+              <img src={assetUrl('/images/memoria-esquerda.jpeg')} alt="Uma selfie nossa juntos" />
             </div>
-            <div style={{
+            <div className="hero-photo-memory hero-photo-memory--right" style={{
               position: 'absolute', right: 0, bottom: -4,
               width: 78, height: 78,
               borderRadius: 12, overflow: 'hidden',
               boxShadow: '0 10px 28px rgba(33,11,54,0.48)',
               border: '2px solid rgba(198,165,238,0.24)',
             }}>
-              <PhotoPlaceholder label="Outra memória" compact />
+              <img src={assetUrl('/images/memoria-direita.jpeg')} alt="Nós dois juntos na piscina" />
             </div>
           </div>
         </FadeIn>
