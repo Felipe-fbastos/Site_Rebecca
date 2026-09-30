@@ -80,6 +80,47 @@ function useInView(threshold = 0.12) {
   return { ref, visible };
 }
 
+function useBodyScrollLock(locked: boolean) {
+  useEffect(() => {
+    if (!locked) return;
+
+    const scrollY = window.scrollY;
+    const body = document.body;
+    const root = document.documentElement;
+    const previous = {
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      right: body.style.right,
+      width: body.style.width,
+      overflow: body.style.overflow,
+      rootOverflow: root.style.overflow,
+      rootOverscroll: root.style.overscrollBehavior,
+    };
+
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    body.style.left = '0';
+    body.style.right = '0';
+    body.style.width = '100%';
+    body.style.overflow = 'hidden';
+    root.style.overflow = 'hidden';
+    root.style.overscrollBehavior = 'none';
+
+    return () => {
+      body.style.position = previous.position;
+      body.style.top = previous.top;
+      body.style.left = previous.left;
+      body.style.right = previous.right;
+      body.style.width = previous.width;
+      body.style.overflow = previous.overflow;
+      root.style.overflow = previous.rootOverflow;
+      root.style.overscrollBehavior = previous.rootOverscroll;
+      window.scrollTo(0, scrollY);
+    };
+  }, [locked]);
+}
+
 // ─── Lily SVG ─────────────────────────────────────────────────────────────────
 
 function LilySVG({
@@ -874,6 +915,7 @@ const gallery: GalleryItem[] = [
 
 function GallerySection() {
   const [active, setActive] = useState<GalleryItem | null>(null);
+  useBodyScrollLock(active !== null);
 
   return (
     <section
@@ -968,8 +1010,9 @@ function GallerySection() {
         </p>
       </div>
 
-      {active && (
+      {active && createPortal(
         <div
+          className="gallery-modal"
           onClick={() => setActive(null)}
           style={{
             position: 'fixed', inset: 0, zIndex: 250,
@@ -1027,7 +1070,7 @@ function GallerySection() {
             </button>
           </div>
         </div>
-      )}
+      , document.body)}
     </section>
   );
 }
@@ -1070,6 +1113,7 @@ const favoritePhotos: FavoritePhoto[] = [
 
 function FavoritePhotosSection() {
   const [activePhoto, setActivePhoto] = useState<number | null>(null);
+  useBodyScrollLock(activePhoto !== null);
 
   return (
     <section className="favorite-photos-section" id="suas-fotos">
@@ -1116,7 +1160,7 @@ function FavoritePhotosSection() {
         </FadeIn>
       </div>
 
-      {activePhoto !== null && (
+      {activePhoto !== null && createPortal(
         <div className="favorite-photo-modal" onClick={() => setActivePhoto(null)}>
           <div className="favorite-photo-modal__content" onClick={event => event.stopPropagation()}>
             <div className="favorite-photo-modal__image">
@@ -1131,7 +1175,7 @@ function FavoritePhotosSection() {
             <button type="button" onClick={() => setActivePhoto(null)}>Fechar</button>
           </div>
         </div>
-      )}
+      , document.body)}
     </section>
   );
 }

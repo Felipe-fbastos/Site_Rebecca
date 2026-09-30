@@ -195,6 +195,18 @@ a {
   background: #160720;
 }
 
+.gallery-modal {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-modal > div {
+  margin-block: auto;
+}
+
 @media (max-width: 520px) {
   .gallery-grid > :last-child:nth-child(odd) {
     width: 100%;
@@ -353,6 +365,9 @@ a {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   animation: fadeIn 0.3s ease;
+  height: 100vh;
+  height: 100dvh;
+  overscroll-behavior: contain;
 }
 
 .favorite-photo-modal__content {
