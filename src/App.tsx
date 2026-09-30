@@ -367,26 +367,26 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
         <div
           className="opening-letter-card"
           style={{
-            aspectRatio: '1 / 1',
+            aspectRatio: 'auto',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            borderRadius: 12,
+            borderRadius: 32,
             overflow: 'hidden',
-            background: 'linear-gradient(150deg, #824DA0 0%, #673784 52%, #4E2868 100%)',
-            border: '1px solid rgba(255,240,184,0.62)',
+            background: 'linear-gradient(145deg, rgba(116,66,145,0.82) 0%, rgba(75,35,100,0.92) 58%, rgba(43,16,63,0.96) 100%)',
+            border: '1px solid rgba(255,240,184,0.38)',
             boxShadow: flapOpen
               ? '0 0 100px rgba(239,203,114,0.35), 0 32px 85px rgba(10,2,18,0.68)'
-              : '0 24px 70px rgba(10,2,18,0.62), inset 0 0 0 7px rgba(255,249,245,0.035), inset 0 0 0 9px rgba(239,203,114,0.28)',
+              : '0 36px 100px rgba(10,2,18,0.58), inset 0 1px 0 rgba(255,255,255,0.14)',
             transition: 'box-shadow 0.9s ease, transform 0.9s ease, opacity 0.9s ease',
             transform: flapOpen ? 'translateY(-8px) scale(1.025)' : 'translateY(0) scale(1)',
           }}
         >
-          <div className="opening-letter-content" style={{ padding: 'clamp(26px, 5vh, 42px) clamp(30px, 8vw, 48px)', textAlign: 'center' }}>
+          <div className="opening-letter-content" style={{ padding: 'clamp(30px, 5vh, 46px) clamp(28px, 7vw, 44px)', textAlign: 'left' }}>
             <div className="opening-sun-crest">
               <SunCrestSVG size={58} />
             </div>
-            <p style={{
+            <p className="opening-letter-eyebrow" style={{
               fontFamily: 'Manrope, sans-serif',
               color: '#F6D98B',
               fontSize: 10,
@@ -395,19 +395,19 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
               marginBottom: 8,
               opacity: 0.92,
             }}>
-              para você
+              uma carta para você
             </p>
-            <h2 style={{
+            <h2 className="opening-letter-title" style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               color: '#FFF9F5',
-              fontSize: 26,
+              fontSize: 38,
               fontStyle: 'italic',
               lineHeight: 1.3,
               marginBottom: 10,
             }}>
               Minha princesa,
             </h2>
-            <p style={{
+            <p className="opening-letter-lead" style={{
               fontFamily: 'Manrope, sans-serif',
               color: '#FFF9F5',
               fontSize: 14,
@@ -417,7 +417,7 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
             }}>
               tem um pedacinho do meu coração aqui.
             </p>
-            <p style={{
+            <p className="opening-letter-note" style={{
               fontFamily: 'Manrope, sans-serif',
               color: '#F5E8FA',
               fontSize: 12.5,
@@ -428,11 +428,12 @@ function EnvelopeScreen({ onOpen }: { onOpen: () => void }) {
               Não precisa ser uma data especial para eu lembrar o quanto você é especial para mim.
             </p>
             <button
+              className="opening-letter-button"
               onClick={handleClick}
               disabled={phase !== 'idle'}
               style={{
-                width: 'min(100%, 285px)',
-                padding: '14px 30px',
+                width: '100%',
+                padding: '15px 24px',
                 borderRadius: 999,
                 fontFamily: 'Manrope, sans-serif',
                 fontSize: 13.5,
