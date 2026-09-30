@@ -1673,10 +1673,17 @@ function FutureSection() {
 
 function LetterSection() {
   const [revealed, setRevealed] = useState(false);
+  const [answered, setAnswered] = useState(false);
   const [showPetals, setShowPetals] = useState(false);
 
   function handleReveal() {
     setRevealed(true);
+    setShowPetals(true);
+    setTimeout(() => setShowPetals(false), 5500);
+  }
+
+  function handleAnswer() {
+    setAnswered(true);
     setShowPetals(true);
     setTimeout(() => setShowPetals(false), 5500);
   }
@@ -1773,19 +1780,27 @@ function LetterSection() {
                   Só mais uma coisinha... 💜
                 </button>
               ) : (
-                <div style={{
+                <div className="letter-final-moment" style={{
                   textAlign: 'center',
                   animation: 'fadeSlideUp 0.85s ease forwards',
                 }}>
-                  <p style={{
-                    fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: '#43205D',
-                    fontSize: 'clamp(15px, 4.5vw, 21px)',
-                    fontStyle: 'italic',
-                    lineHeight: 1.55,
-                  }}>
-                    "Eu te quero para sempre, minha princesa. 💜"
-                  </p>
+                  {!answered ? (
+                    <>
+                      <p className="letter-final-moment__eyebrow">nosso próximo capítulo</p>
+                      <p className="letter-final-moment__question">
+                        Entre todas as histórias que eu poderia viver, eu ainda escolheria a nossa.
+                      </p>
+                      <button className="letter-final-moment__button" type="button" onClick={handleAnswer}>
+                        Continuamos escrevendo juntos? 💜
+                      </button>
+                    </>
+                  ) : (
+                    <div className="letter-final-moment__answer" role="status">
+                      <span aria-hidden="true">💜</span>
+                      <p>Então vem me dar um abraço.</p>
+                      <strong>O próximo capítulo começa agora.</strong>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
